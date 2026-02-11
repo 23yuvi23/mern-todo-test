@@ -7,7 +7,7 @@ const router = express.Router();
 router.get('/todos', async (req, res) => {
     try {
 
-        const todos = Todo.find();
+        const todos =await Todo.find();
         res.status(200).json({
             success: true,
             todos: todos
@@ -23,7 +23,7 @@ router.get('/todos', async (req, res) => {
 })
 
 // route 2 add a new todo
-router.post('/todos', async (req, res){
+router.post('/todos', async (req, res)=>{
     try {
 
         const { text } = req.body
